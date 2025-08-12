@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>示例站点 - Simple & Young</title>
+
+  <!-- 样式文件引入 -->
+  <link rel="stylesheet" href="./assets/tailwind.css" />
+  <link rel="stylesheet" href="./assets/Inter/inter.css" />
+  <link rel="stylesheet" href="./assets/aos/aos.css" />
+  <link rel="stylesheet" href="./assets/app/css/app.css" />
+</head>
+
+<!-- 导航配置 -->
+<script id="nav-config" type="application/json">
+{
+  "settings": {
+    "openInNewTab": true,
+    "cardHeight": 150,
+    "defaultTextColor": "#ffffff",
+    "defaultOverlay": { "color": "#0b1220", "opacity": 0.35 },
+    "hover": { "scale": 1.02, "lift": 6 },
+    "globalBackground": {
+      "enabled": true,
+      "type": "image",
+      "value": "https://pan-image-hosting-2301.bqiu.ru/p/image-hosting/photo_3_2025-08-03_21-05-27.jpg"
+    }
+  },
+  "links": [
+    {
+      "title": "雪球Bqiu的小破站-博客Blog",
+      "url": "https://www.bqiu.net/",
+      "icon": "https://qq-avatar.bqiu.ru/avatar",
+      "desc": "此导航站的作者",
+      "bg": { "enabled": true, "type": "color", "value": "#ef4444" },
+      "textColor": "#ffffff",
+      "style": { "radius": 18, "shadow": "0 18px 40px rgba(239, 68, 68, .35)" },
+      "badge": "个人博客"
+    },
+    {
+      "title": "NodeSeek",
+      "url": "https://www.nodeseek.com/",
+      "icon": "https://www.nodeseek.com/static/image/favicon/android-chrome-192x192.png",
+      "desc": "NodeSeek是一个面向主机爱好者的中文社区论坛。",
+      "bg": {
+        "enabled": true,
+        "type": "gradient",
+        "value": "linear-gradient(135deg,#3b82f6 0%,#1d4ed8 100%)"
+      },
+      "textColor": "#ffffff",
+      "style": { "radius": 18, "shadow": "0 16px 42px rgba(59,130,246,.35)" },
+      "badge": "论坛"
+    },
+    {
+      "title": "Linux DO",
+      "url": "https://linux.do/",
+      "icon": "https://linux.do/uploads/default/original/4X/c/c/d/ccd8c210609d498cbeb3d5201d4c259348447562.png",
+      "desc": "LINUX DO 是一个技术社区，提供开发调优、资源分享等丰富内容，并鼓励用户相互交流。",
+      "bg": {
+        "enabled": true,
+        "type": "color",
+        "value": "#2b5b84"
+      },
+      "overlay": { "color": "#0b1220", "opacity": 0.35 },
+      "textColor": "#ffffff",
+      "style": { "radius": 18, "shadow": "0 16px 40px rgba(43,91,132,.35)" },
+      "badge": "论坛"
+    },
+    {
+      "title": "余生导航站",
+      "url": "https://awsxs.com/",
+      "icon": "https://awsxs.com/assets/img/logo.png",
+      "desc": "余生导航站致力于简洁高效无广告的上网导航和搜索入口，沉淀最具价值链接，全站无商业推广，简约而不简单。",
+      "bg": { "enabled": true, "type": "color", "value": "#06b6d4" },
+      "textColor": "#ffffff",
+      "style": { "radius": 18, "shadow": "0 16px 40px rgba(6,182,212,.35)" },
+      "badge": "导航"
+    },
+    {
+      "title": "忧郁狐狐の小窝",
+      "url": "https://blog.8999000.xyz/",
+      "icon": "https://blog.8999000.xyz/favicon.ico",
+      "desc": "信息技术向分享博客",
+      "bg": { "enabled": true, "type": "color", "value": "#ff7139" },
+      "textColor": "#ffffff",
+      "style": { "radius": 18, "shadow": "0 16px 40px rgba(255,113,57,.35)" },
+      "badge": "博客"
+    },
+    {
+      "title": "LeonXieの小窝",
+      "url": "https://www.leonxie.cn/",
+      "icon": "https://www.leonxie.cn/upload/sakura-flower.png",
+      "desc": "一个分享技术、生活和实用软件的个人博客，包含远程桌面连接、网盘搭建、Docker部署等内容。",
+      "bg": { "enabled": true, "type": "gradient", "value": "linear-gradient(135deg,#66595c 0%,#8a8a8a 100%)" },
+      "textColor": "#ffffff",
+      "style": { "radius": 18, "shadow": "0 16px 40px rgba(102,89,92,.35)" },
+      "badge": "个人博客"
+    },
+    {
+      "title": "想看什么捏",
+      "url": "https://review.bqiu.top/",
+      "icon": "https://review.bqiu.top/favicon.ico",
+      "desc": "暂无描述",
+      "bg": { "enabled": true, "type": "color", "value": "#f38020" },
+      "textColor": "#ffffff",
+      "style": { "radius": 18, "shadow": "0 16px 40px rgba(243,128,32,.35)" },
+      "badge": "评论"
+    },
+    {
+      "title": "工具站 - Tool for You",
+      "url": "https://tool.bqiu.top/index.html",
+      "icon": "https://tool.bqiu.top/favicon.ico",
+      "desc": "暂无描述",
+      "bg": { "enabled": true, "type": "color", "value": "#059669" },
+      "textColor": "#ffffff",
+      "style": { "radius": 18, "shadow": "0 16px 40px rgba(5,150,105,.35)" },
+      "badge": "工具"
+    }
+  ]
+}
+
+</script>
+
+<body>
+  <!-- 页面头部 -->
+  <header class="max-w-7xl mx-auto px-5 md:px-8 pt-10 md:pt-14">
+    
+    <!-- 标题栏 -->
+    <div class="flex items-center justify-between gap-4">
+      <h1 class="text-2xl md:text-4xl font-extrabold tracking-tight">
+        <span class="text-gradient">个人导航站</span>
+        <span class="ml-2 text-sm md:text-base font-medium text-slate-400">Simple · Young · Beautiful</span>
+      </h1>
+      
+      <button onclick="showConfigPage()" 
+              class="bg-gradient-to-r from-indigo-500/20 to-purple-500/20 
+                     hover:from-indigo-500/30 hover:to-purple-500/30 
+                     backdrop-blur-md border border-white/10 
+                     px-5 py-2.5 rounded-xl text-white font-medium 
+                     transition-all duration-300 shadow-lg hover:shadow-indigo-500/25 
+                     flex items-center gap-2">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+        </svg>
+        如何配置
+      </button>
+    </div>
+
+    <!-- 搜索框 -->
+    <div class="mt-6 md:mt-8 glass rounded-2xl p-3 md:p-4">
+      <div class="flex flex-col md:flex-row items-stretch md:items-center gap-3">
+        
+        <div class="relative flex-1">
+          <input id="search" 
+                 type="text" 
+                 placeholder="搜索站点名称或描述..." 
+                 class="w-full bg-transparent placeholder:text-slate-400 text-slate-100 
+                        rounded-xl border border-white/10 px-4 py-3 pr-10 
+                        focus:ring-0 focus:outline-none focus:border-white/20" />
+          <svg aria-hidden="true" viewBox="0 0 24 24" 
+               class="pointer-events-none w-5 h-5 text-slate-400 
+                      absolute right-3 top-1/2 -translate-y-1/2">
+            <path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.471 6.471 0 0 0 1.57-4.23A6.5 6.5 0 1 0 9.5 15c1.61 0 3.09-.59 4.23-1.57l.27.28v.79L20 21.5 21.5 20l-6-6zM4 9.5C4 6.46 6.46 4 9.5 4S15 6.46 15 9.5 12.54 15 9.5 15 4 12.54 4 9.5z"></path>
+          </svg>
+        </div>
+
+        <div class="flex items-center gap-2 text-xs text-slate-400">
+          <span class="hidden md:inline">小贴士：</span>
+          <span>点击卡片即可打开站点，支持拖曳/悬停动画</span>
+        </div>
+
+      </div>
+    </div>
+
+  </header>
+
+  <!-- 主要内容区 -->
+  <main class="max-w-7xl mx-auto px-5 md:px-8 py-8 md:py-10">
+    
+    <!-- 卡片展示区域 -->
+    <div id="nav-cards" 
+         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-6">
+      <div id="cards" class="contents"></div>
+    </div>
+
+    <!-- 配置说明页面 -->
+    <div id="config-page" class="hidden">
+      <div class="max-w-4xl mx-auto">
+        <div class="backdrop-blur-xl bg-white/5 rounded-2xl p-8 md:p-10 
+                    border border-white/10 shadow-2xl">
+          
+          <!-- 配置页面标题 -->
+          <div class="flex items-center justify-between mb-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-gradient">配置指南</h2>
+            <button onclick="showMainPage()" 
+                    class="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 
+                           transition-colors text-sm font-medium">
+              ← 返回首页
+            </button>
+          </div>
+
+          <!-- 配置说明内容 -->
+          <div class="space-y-8 text-slate-300">
+            
+            <!-- 快速开始 -->
+            <section>
+              <h3 class="text-xl font-semibold mb-4 text-white">📝 快速开始</h3>
+              <p class="mb-4">只需编辑页面中的 JSON 配置即可自定义你的导航站：</p>
+              <ol class="list-decimal list-inside space-y-2 ml-4">
+                <li>找到页面中的 <code class="bg-black px-2 py-1 rounded text-sm">&lt;script id="nav-config"&gt;</code> 部分</li>
+                <li>修改 JSON 内容中的链接信息</li>
+                <li>保存文件，页面会自动更新</li>
+              </ol>
+            </section>
+
+            <!-- 卡片配置说明 -->
+            <section>
+              <h3 class="text-xl font-semibold mb-4 text-white">🎨 卡片配置</h3>
+              <div class="space-y-6">
+                
+                <!-- 基本字段 -->
+                <div>
+                  <h4 class="font-medium text-white mb-2">基本字段</h4>
+                  <pre class="bg-black border border-white/10 p-4 rounded-lg text-sm overflow-x-auto"><code>{
+"title": "站点名称",
+"url": "https://example.com",
+"icon": "https://example.com/icon.png",
+"desc": "站点描述"
+}</code></pre>
+                </div>
+
+                <!-- 背景样式 -->
+                <div>
+                  <h4 class="font-medium text-white mb-2">背景样式</h4>
+                  <pre class="bg-black border border-white/10 p-4 rounded-lg text-sm overflow-x-auto"><code>"bg": {
+  "enabled": true,
+  "type": "color",        // 可选: color, image, gradient
+  "value": "#ef4444"      // 颜色值、图片URL或CSS渐变
+}</code></pre>
+                </div>
+
+                <!-- 高级样式 -->
+                <div>
+                  <h4 class="font-medium text-white mb-2">高级样式</h4>
+                  <pre class="bg-black border border-white/10 p-4 rounded-lg text-sm overflow-x-auto"><code>"textColor": "#ffffff",   // 文字颜色
+"style": {
+  "radius": 18,           // 圆角大小(px)
+  "shadow": "0 10px 26px rgba(0,0,0,.35)"
+},
+"badge": "NEW"          // 角标文字</code></pre>
+                </div>
+
+              </div>
+            </section>
+
+            <!-- 全局设置说明 -->
+            <section>
+              <h3 class="text-xl font-semibold mb-4 text-white">⚙️ 全局设置</h3>
+              <pre class="bg-black border border-white/10 p-4 rounded-lg text-sm overflow-x-auto"><code>"settings": {
+  "openInNewTab": true,     // 新窗口打开
+  "cardHeight": 150,        // 卡片高度(px)
+  "hover": {
+    "scale": 1.02,          // 悬停缩放
+    "lift": 6               // 悬停上浮(px)
+  },
+  "globalBackground": {     // 全局背景设置
+    "enabled": false,       // 是否启用自定义背景
+    "type": "image",          // 类型: color, image, gradient
+    "value": "图片URL或颜色值" // 背景值
+  }
+}</code></pre>
+            </section>
+
+            <!-- 示例配置 -->
+            <section>
+              <h3 class="text-xl font-semibold mb-4 text-white">💡 示例配置</h3>
+              <p class="mb-4">复制以下示例，根据需要进行修改：</p>
+              
+              <pre class="bg-black border border-white/10 p-4 rounded-lg text-sm overflow-x-auto"><code>{
+  "title": "我的博客",
+  "url": "https://myblog.com",
+  "icon": "https://myblog.com/favicon.ico",
+  "desc": "记录技术与生活",
+  "bg": {
+    "enabled": true,
+    "type": "gradient",
+    "value": "linear-gradient(135deg,#667eea 0%,#764ba2 100%)"
+  },
+  "textColor": "#ffffff",
+  "style": { "radius": 18, "shadow": "0 10px 26px rgba(102,126,234,.35)" }
+}</code></pre>
+              
+              <h4 class="font-medium text-white mt-6 mb-2">全局背景示例</h4>
+              <pre class="bg-black border border-white/10 p-4 rounded-lg text-sm overflow-x-auto"><code>"globalBackground": {
+  "enabled": true,
+  "type": "image",
+  "value": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2000&auto=format&fit=crop"
+}</code></pre>
+            </section>
+
+            <!-- 注意事项 -->
+            <section>
+              <h3 class="text-xl font-semibold mb-4 text-white">🔧 注意事项</h3>
+              <ul class="list-disc list-inside space-y-2 ml-4">
+                <li>确保 JSON 格式正确，使用在线 JSON 校验工具检查</li>
+                <li>图片链接必须是 HTTPS 协议</li>
+                <li>图标建议使用 64x64 或 128x128 的正方形图片</li>
+                <li>修改后如未生效，请强制刷新页面 (Ctrl+F5)</li>
+              </ul>
+            </section>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="max-w-7xl mx-auto px-5 md:px-8 pb-12 text-center text-slate-500 text-sm">
+    <div>© <span id="year"></span> 轻灵导航 • 从一个 JSON 开始定制你的世界</div>
+  </footer>
+
+  <!-- 脚本引入 -->
+  <script src="./assets/aos/aos.js"></script>
+  <script src="./assets/app/js/app.js"></script>
+
+</body>
+</html>
